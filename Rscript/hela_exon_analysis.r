@@ -1,4 +1,4 @@
-#### code for regenerating figures for Hela cassete exons sequence analysis, including G content, G4 motif frequency, G4-hunter score analysis
+#### code for regenerating figures based on Hela cassete exons sequence analysis, including G content, G4 motif frequency, G4-hunter score analysis
 #### realted figures: Figure 1E-1H, Figure S1G
 ### loading the required library
 library(ggpubr)
@@ -19,8 +19,8 @@ cat('Hela splicing data analysis...\n')
 load(paste0(data_path,'/hela.exon.sequence.features.Rdata'))
 helatypes = c('exon','dnsexon_ss3','ss3','ss5','upsexon_ss5')
 # G4-hunter score
-ss5g4hs = as.data.frame(fread(paste0(data_path,'/hela.ss5.g4h.scroe.tab'),head = T))
-ss3g4hs = as.data.frame(fread(paste0(data_path,'/hela.ss3.g4h.scroe.tab'),head = T))
+ss5g4hs = as.data.frame(fread(paste0(data_path,'/hela.ss5.g4h.score.tab'),head = T))
+ss3g4hs = as.data.frame(fread(paste0(data_path,'/hela.ss3.g4h.score.tab'),head = T))
 ss5g4hso = ss5g4hs[order(gsub('\\(.*','',ss5g4hs[,1])),]
 ss3g4hso = ss3g4hs[order(gsub('\\(.*','',ss3g4hs[,1])),]
 # 
@@ -29,7 +29,7 @@ if (!(file.exists('raw_pdf'))){
 }
 
 ###
-cat('checking G content ...\n')
+cat('processing cassete exons ...\n')
 helaexons$DPSI_32vs40 = apply(helaexons[,grep('PSI_WT32_',colnames(helaexons))],1,mean) - apply(helaexons[,grep('PSI_WT40_',colnames(helaexons))],1,mean)
 subexons = helaexons[helaexons[,7] - helaexons[,6] > lencut,]
 subepsiave = as.data.frame(cbind(apply(subexons[,14:17],1,mean),apply(subexons[,18:21],1,mean),apply(subexons[,24:27],1,mean),subexons[,c(12,22)]))
