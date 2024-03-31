@@ -1,6 +1,6 @@
 # G4splicing
 
-Code for regenerating figures in the RNA G4 splicing study.
+Code for reproducing results/figures in the RNA G4 splicing study.
 
 
 #### Enviroment and required libraries
@@ -11,7 +11,7 @@ Code for regenerating figures in the RNA G4 splicing study.
 - BEDTOOLS 2.30
 
 #### Quick start
-To regenerate the figures, unzip the pre-computed data under the directory 'data', loading them into R, and running the script under the directory 'Rscript'.
+To reproduce the figures, unzip the pre-computed data under the directory 'data', loading them into R, and running the script under the directory 'Rscript'.
 
 The 'ana.g4.seq.py' is the in-house python script for analyzing nucleotide content and searching G4 motifs from the previous study.
 
