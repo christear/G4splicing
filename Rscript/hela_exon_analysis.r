@@ -1,4 +1,4 @@
-#### code for regenerating figures based on Hela cassete exons sequence analysis, including G content, G4 motif frequency, G4-hunter score analysis
+#### code for reproducing figures based on Hela cassete exons sequence analysis, including G content, G4 motif frequency, G4-hunter score analysis
 #### realted figures: Figure 1E-1H, Figure S1G
 ### loading the required library
 library(ggpubr)
@@ -14,7 +14,7 @@ dcut = -0.1
 ###
 cat('Hela splicing data analysis...\n')
 # loading the data
-#data_path='data_for_uploading'
+#data_path='data'
 #save(list = c('helaexons','gcontentl','subg4l'),file = 'hela.exon.sequence.features.Rdata')
 load(paste0(data_path,'/hela.exon.sequence.features.Rdata'))
 helatypes = c('exon','dnsexon_ss3','ss3','ss5','upsexon_ss5')
